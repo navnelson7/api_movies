@@ -1,7 +1,7 @@
 ## Restful API to manage a small movie retal
 RestFul API to manage a small movie rental and sale, using JWT authentication, build on laravel 7.x
 
-##Requirements
+## Requirements
 * PHP>=7.2.5
 * MySQL>=8
 * Laravel 7.x
