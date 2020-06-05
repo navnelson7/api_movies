@@ -32,6 +32,10 @@ Route::post('/movies/store','MoviesController@store');
 //delete movies
 Route::delete('/movies/{id}','MoviesController@destroy');
 
+// routes not require token validate.
+Route::post('/login', 'AuthController@login');
+Route::post('/register', 'AuthController@register');
+
 //routes require a valid token to be accessed.
 Route::group(['middleware', 'auth.jwt'], function(){
     Route::post('/logout','AuthController@logout');
