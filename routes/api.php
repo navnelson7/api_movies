@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\MoviesController;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 
@@ -16,4 +17,22 @@ use Illuminate\Support\Facades\Route;
 
 Route::middleware('auth:api')->get('/user', function (Request $request) {
     return $request->user();
+});
+
+//add route to endpoint MoviesController
+//get all movies
+Route::get('movies','MoviesController@index')->name('movies');
+
+//get one movie
+Route::get('/movies/{id}','MoviesController@show');
+
+//store movies
+Route::post('/movies/store','MoviesController@store');
+
+//delete movies
+Route::delete('/movies/{id}','MoviesController@destroy');
+
+//routes require a valid token to be accessed.
+Route::group(['middleware', 'auth.jwt'], function(){
+    Route::post('/logout','AuthController@logout');
 });
