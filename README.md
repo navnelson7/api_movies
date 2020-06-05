@@ -14,12 +14,12 @@ https://gitlab.com/applaudostudios/php-test/juan-navarro.git
 '''
 
 ## Instaling dependencies
-'''
+```
 composer update
-'''
+```
 ## Generatin key to laravel
-'''
+```
 cd jun-navarro/
 cd api_movies/
 php artisan key:generate
-'''
+```
