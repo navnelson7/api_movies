@@ -10,9 +10,9 @@ class Stock extends Model
     protected $fillable = [
         'movie_id',
         'price_sale',
-        'prices_rental',
+        'price_rental',
         'stock',
-        'date_inserted_stok',
+        'date_inserted_stock',
         'available',
         'date_modify',
         'user_id'

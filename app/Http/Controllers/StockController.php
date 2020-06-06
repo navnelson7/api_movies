@@ -35,7 +35,9 @@ class StockController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        //save data stock
+        Stock::create($request->all());
+        return 200;
     }
 
     /**
@@ -46,7 +48,9 @@ class StockController extends Controller
      */
     public function show($id)
     {
-        //
+        //showing one register stock
+        $stock = Stock::findOrFail($id);
+        return  $stock;
     }
 
     /**
@@ -80,6 +84,8 @@ class StockController extends Controller
      */
     public function destroy($id)
     {
-        //
+        //deleting one stock
+        $stock = Stock::findOrFail($id);
+        $stock->delete();
     }
 }

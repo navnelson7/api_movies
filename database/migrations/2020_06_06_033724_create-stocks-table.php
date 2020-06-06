@@ -18,7 +18,7 @@ class CreateStocksTable extends Migration
             $table->bigInteger('movie_id')->unsigned();
             $table->decimal('price_sale',8,2);
             $table->decimal('price_rental',8,2);
-            $table->integer('stok');
+            $table->integer('stock');
             $table->date('date_inserted_stock');
             $table->boolean('available');
             $table->date('date_modify');

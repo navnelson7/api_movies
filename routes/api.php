@@ -31,7 +31,9 @@ Route::delete('/movies/{id}','MoviesController@destroy');
 
 //add route to endpoint Stock
 Route::get('stock','StockController@index')->name('stock');
-
+Route::post('/stock/store','StockController@store');
+Route::get('/stock/{id}','StockController@show');
+Route::delete('/stock/{id}','StockController@destroy');
 
 // routes not require token validate.
 Route::post('/login', 'AuthController@login');
