@@ -17,9 +17,18 @@ https://gitlab.com/applaudostudios/php-test/juan-navarro.git
 ```
 composer update
 ```
-## Generatin key to laravel
+## Generate key to laravel
+* accesssing the project directory
 ```
 cd jun-navarro/
-cd api_movies/
+```
+* generating key
+
+```
 php artisan key:generate
+```
+
+## startin server
+```
+php artisan serve
 ```
