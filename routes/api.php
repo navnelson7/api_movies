@@ -22,15 +22,16 @@ Route::middleware('auth:api')->get('/user', function (Request $request) {
 //add route to endpoint MoviesController
 //get all movies
 Route::get('movies','MoviesController@index')->name('movies');
-
 //get one movie
 Route::get('/movies/{id}','MoviesController@show');
-
 //store movies
 Route::post('/movies/store','MoviesController@store');
-
 //delete movies
 Route::delete('/movies/{id}','MoviesController@destroy');
+
+//add route to endpoint Stock
+Route::get('stock','StockController@index')->name('stock');
+
 
 // routes not require token validate.
 Route::post('/login', 'AuthController@login');
