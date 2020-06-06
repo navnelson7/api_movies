@@ -25,13 +25,15 @@ Route::get('movies','MoviesController@index')->name('movies');
 //get one movie
 Route::get('/movies/{id}','MoviesController@show');
 //store movies
-Route::post('/movies/store','MoviesController@store');
+Route::post('/movies/store',['middleware' =>'auth.role:admin,user',
+'uses' =>'MoviesController@store']);
 //delete movies
 Route::delete('/movies/{id}','MoviesController@destroy');
 
 //add route to endpoint Stock
 Route::get('stock','StockController@index')->name('stock');
-Route::post('/stock/store','StockController@store');
+Route::post('/stock/store',['middleware' => 'auth.role:admin,user',
+'uses' =>'StockController@store']);
 Route::get('/stock/{id}','StockController@show');
 Route::delete('/stock/{id}','StockController@destroy');
 
