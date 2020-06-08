@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\DetailrentalController;
 use App\Http\Controllers\MoviesController;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
@@ -45,6 +46,11 @@ Route::delete('/stock/{id}','StockController@destroy');
 Route::get('rentals','RentalController@index')->name('rentals');
 Route::post('/rentals/store',['middleware' => 'auth.role:admin,user',
 'uses' =>'RentalController@store']);
+
+//add route to endpoint retals details
+Route::get('rental_detail','DetailrentalController@index')->name('rental_detail');
+Route::post('/rental_detail/store',['middleware' => 'auth.role:admin,user',
+'uses' =>'DetailrentalController@store']);
 
 // routes not require token validate.
 Route::post('/login', 'AuthController@login');
