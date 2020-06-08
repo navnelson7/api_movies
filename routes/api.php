@@ -25,10 +25,14 @@ Route::get('movies','MoviesController@index')->name('movies');
 //get one movie
 Route::get('/movies/{id}','MoviesController@show');
 //store movies
-Route::post('/movies/store',['middleware' =>'auth.role:admin,user',
+Route::post('/movies/store',['middleware' =>'auth.role:admin',
 'uses' =>'MoviesController@store']);
 //delete movies
-Route::delete('/movies/{id}','MoviesController@destroy');
+Route::delete('/movies/{id}',['middleware' => 'auth.role:admin',
+'uses' =>'MoviesController@destroy']);
+//updat Movie
+Route::put('/movies/{id}',['middleware' => 'auth.role:admin',
+'uses' =>'MoviesController@update']);
 
 //add route to endpoint Stock
 Route::get('stock','StockController@index')->name('stock');

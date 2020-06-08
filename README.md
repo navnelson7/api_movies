@@ -22,6 +22,11 @@ composer update
 ```
 cd jun-navarro/
 ```
+* configure environment in .env file
+    cambiar el nombre .env.example a .env
+```
+
+```
 * generating key
 
 ```
