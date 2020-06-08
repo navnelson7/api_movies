@@ -76,3 +76,57 @@ http://localhost:8000/api/documentation
 ```
 php artisan serve
 ```
+## Detail endpoing
+* server http://127.0.0.1:8000
+```
+GET /api​/movies Show All Movies
+```
+```
+POST ​/api​/movies​/store Store new movies (require jwt token authentication and role admin)
+```
+```
+GET ​/api​/movies​/{id} Show on movie finding by id (require jwt token authentication and role admin)
+```
+```
+PUT ​/api​/movies​/{id} Update movie finding by id (require jwt token authentication and role admin)
+```
+```
+DELETE ​/api​/movies​/{id} Deleting a movie (require jwt token authentication and role admin)
+```
+* detail endpoint auth
+```
+GET /api/register Register new user (no require authentication)
+```
+```
+POST /api/login Login Session
+```
+```
+POST /api/logout Logout session (require jwt authentication)
+```
+*  endpoint stock
+```
+GET /api/stock/ get all register stock
+```
+```
+POST /api/stock/store (require jwt token authentication and role admin)
+```
+```
+PUT /api/stock/{id} update stock (require jwt token authentication and role admin)
+```
+```
+DELETE /api/stok/{id} delete stock (require jwt token authentication and role admin)
+```
+* End Point Rental
+```
+GET /api/rentals/ get all register rentals (require jwt token authentication and role admin)
+```
+```
+POST /api/rentals new register rentals (require jwt token authentication and role admin)
+```
+* EndPoint Rental Dentails
+```
+GET /api/rental_detail get all register detail rentals (require jwt token authentication and role admin)
+```
+```
+POST /api/rental_detail new register detail of rentals (require jwt token authentication and role admin)
+```
