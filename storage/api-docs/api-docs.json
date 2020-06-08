@@ -12,13 +12,96 @@
     "paths": {
         "/api/movies": {
             "get": {
-                "summary": "Mostrar usuarios",
+                "tags": [
+                    "Show All Movie"
+                ],
+                "summary": "Show All Movies",
+                "operationId": "showMovies",
                 "responses": {
                     "200": {
-                        "description": "Mostrar todos los usuarios."
+                        "description": "Get All Movies."
                     },
                     "default": {
-                        "description": "Ha ocurrido un error."
+                        "description": "an error has occurred."
+                    }
+                }
+            }
+        },
+        "/api/movies/store?title=La%20bella%20y%20la%20bestia&description=Pelicula%20de%20un%20hombre%20convertido%20en%20bestia&image_url=pin8.jpg&stock=5&price_sale=3.0&price_rental=2.8&available=1&user_id=1": {
+            "post": {
+                "tags": [
+                    "Movies Store"
+                ],
+                "summary": "Store new Movie",
+                "description": "Returns Movie data",
+                "operationId": "storeMovies",
+                "parameters": [
+                    {
+                        "name": "title",
+                        "in": "query",
+                        "description": "Title to Movie"
+                    }
+                ],
+                "requestBody": {
+                    "required": true
+                },
+                "responses": {
+                    "201": {
+                        "description": "an error has occurred"
+                    },
+                    "400": {
+                        "description": "Bad Request"
+                    },
+                    "401": {
+                        "description": "Unauthenticated"
+                    },
+                    "403": {
+                        "description": "Forbidden"
+                    }
+                }
+            }
+        },
+        "/api/movies/1": {
+            "get": {
+                "tags": [
+                    "Show one Movie"
+                ],
+                "summary": "Show on movie finding by id",
+                "operationId": "showMovies",
+                "responses": {
+                    "200": {
+                        "description": "Get one movie."
+                    },
+                    "default": {
+                        "description": "an error has occurred."
+                    }
+                }
+            },
+            "put": {
+                "tags": [
+                    "Update one Movie"
+                ],
+                "summary": "Update movie finding by id",
+                "operationId": "updatewMovies",
+                "responses": {
+                    "200": {
+                        "description": "Update one movie finding by id methos put api."
+                    },
+                    "default": {
+                        "description": "an error has occurred."
+                    }
+                }
+            }
+        },
+        "/api/movies/4": {
+            "delete": {
+                "summary": "Deleting a movie",
+                "responses": {
+                    "200": {
+                        "description": "Delte movie method delete to api."
+                    },
+                    "default": {
+                        "description": "an error has occurred."
                     }
                 }
             }

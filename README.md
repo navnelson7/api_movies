@@ -52,6 +52,26 @@ DB_PASSWORD=lasttip
 php artisan key:generate
 ```
 
+## Generate key to JWT
+```
+php artisan jwt:secret
+```
+
+## Ejecuting migration
+```
+php artisan migrate
+```
+
+## View documentation
+* generating documentation
+```
+php artisan l5-swagger:generate
+```
+* view documentation
+```
+http://localhost:8000/api/documentation
+```
+
 ## startin server
 ```
 php artisan serve

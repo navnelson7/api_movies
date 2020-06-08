@@ -10,7 +10,6 @@ use JWTAuth;
 use Tymon\JWTAuth\Contracts\Providers\JWT;
 use Tymon\JWTAuth\Exceptions\JWTException;
 use Tymon\JWTAuth as JWTAuthJWTAuth;
-
 class AuthController extends Controller
 {
     public $loginAfterSingUp = true;
