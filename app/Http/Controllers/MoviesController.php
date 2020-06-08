@@ -5,8 +5,31 @@ namespace App\Http\Controllers;
 use App\Movies;
 use Illuminate\Http\Request;
 
+/** 
+ * @OA\Info(title="API Movies", version="1.0")
+ * 
+ * @OA\Server(url="http://localhost:8000")
+*/
+
 class MoviesController extends Controller
 {
+
+        /**
+    * @OA\Get(
+    *     path="/api/movies",
+    *     summary="Mostrar usuarios",
+    *     @OA\Response(
+    *         response=200,
+    *         description="Mostrar todos los usuarios."
+    *     ),
+    *     @OA\Response(
+    *         response="default",
+    *         description="Ha ocurrido un error."
+    *     )
+    * )
+    */
+
+
     /**
      * Display a listing of the resource.
      *
