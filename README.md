@@ -23,11 +23,28 @@ composer update
 cd jun-navarro/
 ```
 * configure environment in .env file
-    cambiar el nombre .env.example a .env
+```
+cambiar el nombre .env.example a .env
+```
 
 * Configure credentials to connect to mysql
 ```
 DB_CONNECTION=mysql
+```
+```
+DB_HOST=127.0.0.1
+```
+```
+DB_PORT=3306
+```
+```
+DB_DATABASE=movies
+```
+```
+DB_USERNAME=root
+```
+```
+DB_PASSWORD=lasttip
 ```
 * generating key
 
