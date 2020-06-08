@@ -24,8 +24,10 @@ cd jun-navarro/
 ```
 * configure environment in .env file
     cambiar el nombre .env.example a .env
-```
 
+* Configure credentials to connect to mysql
+```
+DB_CONNECTION=mysql
 ```
 * generating key
 
