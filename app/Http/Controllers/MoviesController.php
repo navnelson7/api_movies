@@ -91,6 +91,7 @@ class MoviesController extends Controller
     {
         //storing movies
         Movies::create($request->all());
+        return 200;
     }
 
     /**
@@ -121,17 +122,6 @@ class MoviesController extends Controller
         //fiding a movie
         $movie = Movies::findOrFail($id);
         return $movie;
-    }
-
-    /**
-     * Show the form for editing the specified resource.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function edit($id)
-    {
-        //
     }
 
     /**
@@ -189,5 +179,6 @@ class MoviesController extends Controller
         //deleting a movie
         $movie = Movies::findOrFail($id);
         $movie->delete();
+        return 200;
     }
 }

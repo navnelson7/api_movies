@@ -2,10 +2,9 @@
 
 namespace App\Http\Controllers;
 
-use App\Movies;
 use Illuminate\Http\Request;
-use App\Stock;
-class StockController extends Controller
+
+class SaleController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -14,8 +13,7 @@ class StockController extends Controller
      */
     public function index()
     {
-        //show all movies on stock
-        return Stock::all();
+        //
     }
 
     /**
@@ -36,9 +34,7 @@ class StockController extends Controller
      */
     public function store(Request $request)
     {
-        //save data stock
-        Stock::create($request->all());
-        return 200;
+        //
     }
 
     /**
@@ -49,9 +45,7 @@ class StockController extends Controller
      */
     public function show($id)
     {
-        //showing one register stock
-        $stock = Stock::findOrFail($id);
-        return  $stock;
+        //
     }
 
     /**
@@ -85,8 +79,6 @@ class StockController extends Controller
      */
     public function destroy($id)
     {
-        //deleting one stock
-        $stock = Stock::findOrFail($id);
-        $stock->delete();
+        //
     }
 }

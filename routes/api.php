@@ -41,6 +41,11 @@ Route::post('/stock/store',['middleware' => 'auth.role:admin,user',
 Route::get('/stock/{id}','StockController@show');
 Route::delete('/stock/{id}','StockController@destroy');
 
+//add route to endpoint Rentals
+Route::get('rentals','RentalController@index')->name('rentals');
+Route::post('/rentals/store',['middleware' => 'auth.role:admin,user',
+'uses' =>'RentalController@store']);
+
 // routes not require token validate.
 Route::post('/login', 'AuthController@login');
 Route::post('/register', 'AuthController@register');

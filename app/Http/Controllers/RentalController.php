@@ -2,10 +2,10 @@
 
 namespace App\Http\Controllers;
 
-use App\Movies;
+use App\Rentals;
 use Illuminate\Http\Request;
-use App\Stock;
-class StockController extends Controller
+
+class RentalController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -14,18 +14,8 @@ class StockController extends Controller
      */
     public function index()
     {
-        //show all movies on stock
-        return Stock::all();
-    }
-
-    /**
-     * Show the form for creating a new resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
-    public function create()
-    {
-        //
+        //showing all register of rental
+        return Rentals::all();
     }
 
     /**
@@ -36,8 +26,8 @@ class StockController extends Controller
      */
     public function store(Request $request)
     {
-        //save data stock
-        Stock::create($request->all());
+        //store one rental
+        Rentals::create($request->all());
         return 200;
     }
 
@@ -49,20 +39,9 @@ class StockController extends Controller
      */
     public function show($id)
     {
-        //showing one register stock
-        $stock = Stock::findOrFail($id);
-        return  $stock;
-    }
-
-    /**
-     * Show the form for editing the specified resource.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function edit($id)
-    {
-        //
+        //finding one rentals and showing
+        $rental = Rentals::findOrFail($id);
+        return $rental;
     }
 
     /**
@@ -74,8 +53,11 @@ class StockController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        //updating register rental
+        Rentals::wereId($id)->update($request->toArray());
+        return 200;
     }
+
 
     /**
      * Remove the specified resource from storage.
@@ -85,8 +67,9 @@ class StockController extends Controller
      */
     public function destroy($id)
     {
-        //deleting one stock
-        $stock = Stock::findOrFail($id);
-        $stock->delete();
+        //deleting registre of rental
+        $rental = Rentals::findOrFail($id);
+        $rental->delete();
+        return 200;
     }
 }
