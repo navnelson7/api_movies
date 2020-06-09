@@ -130,3 +130,7 @@ GET /api/rental_detail get all register detail rentals (require jwt token authen
 ```
 POST /api/rental_detail new register detail of rentals (require jwt token authentication and role admin)
 ```
+** Collecton shared with postman
+```
+https://www.getpostman.com/collections/650c1cbf5f5595c33080
+```
