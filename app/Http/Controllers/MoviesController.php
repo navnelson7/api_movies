@@ -90,6 +90,7 @@ class MoviesController extends Controller
      */
     {
         //storing movies
+        
         Movies::create($request->all());
         return 200;
     }
